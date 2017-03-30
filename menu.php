@@ -5,7 +5,7 @@ $kasutaja = "<b>Tarmo</b>";
 
 $menu_begin= '<div>'.$kasutaja;
             
-$menu_arr = array('massiivid','andmebaas','hint','file','monitor','koopia','methods','mysql');
+$menu_arr = array('massiivid','andmebaas','hint','file','monitor','koopia','methods','mysql', 'data_insert');
                 
 $menu_end='</div>';
 

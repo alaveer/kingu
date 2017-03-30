@@ -1,7 +1,7 @@
 
  AuthType Basic
  AuthName "Minu oma, ära näpi"
- AuthUserFile C:\wamp\www\cp\.htpasswd
+ AuthUserFile C:\wamp\www\ms16\.htpasswd
  Require valid-user
 
 <files "*.txt">

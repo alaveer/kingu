@@ -1,28 +1,26 @@
-
 <?php
-$kasutaja = "<b>Tarmo</b>";
+
+$tervitus = "<b>Tere tulemast grupikaaslaste lehele!</b>";
 
 
-$menu_begin= '<div>'.$kasutaja;
+$menu_header = '<div>'.$tervitus;
             
-$menu_arr = array('massiivid','andmebaas','hint','file','monitor','koopia','methods','mysql', 'data_insert');
+$menu_body = array('Otsing','Lisamine');
                 
-$menu_end='</div>';
+$menu_footer = '</div>';
 
 function menu($begin,$body,$end) { 
     echo $begin;
     for ($i = 0; $i < count($body); $i++) 
     {
-    echo '<li><a href="'.$body[$i].'.php">'.$body[$i].'</a></li>';
+    echo '<ul><a href="'.$body[$i].'.php">'.$body[$i].'</a></ul>';
     }
     echo $end;
+}
 
-                 }
+function home(){
 
-
-
-
-
-
+echo '<ul><a href="index.php">Tagasi koju</a></ul>';
+}
 
 ?>

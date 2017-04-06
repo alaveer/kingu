@@ -84,11 +84,11 @@ function show_button($conn){
     } 
 }
 
-// otsing parameetri järgi
+// otsing parameetri järgi nupp
 
 function search_by_button($conn){
 
-    echo "<input type='submit' name='search' value='Otsi parameetri järgi'>";
+    echo "<input type='submit' name='search' value='Otsi mingi parameetri järgi'>";
     if(isset($_GET['search'])){
         if ($_GET['ID']==null OR $_GET['PARAM']==null){
             echo "Sisesta midagigi!";

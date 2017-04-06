@@ -21,7 +21,7 @@ home();
         </form>
     <form action='' method='get'>
         <ul>
-            <?php search_by_button($conn); ?>
+            <?php search_by_button($conn); ?><br><br>
             <label for="PARAM">Veerg</label>
             <input type="text" name="PARAM" required>
            

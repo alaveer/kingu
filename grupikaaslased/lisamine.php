@@ -14,18 +14,20 @@ home();
      <form action='' method='post'>
          <ul>
           <?php add_button($conn); ?>      
-        <label for="Eesnimi">Eesnimi</label>
+            <label for="Eesnimi">Eesnimi:</label>
             <input type="text" name="Eesnimi" required>
-            <label for="Perenimi">Perenimi</label>
-            <input type="text" name="Perenimi" required>            
-        <label for="Sünniaasta">Sünniaasta</label>
-            <input type="text" name="Sünniaasta" required>
-       
+            <label for="Perenimi">Perenimi:</label>
+            <input type="text" name="Perenimi" required>     
 
+            <label for="Sünniaasta">Sünniaasta:</label>
+            <input type="text" name="Sünniaasta" required>
+      
          </ul>
         
     </form>
-    
+
+
+
 <!-- kustutamine -->
      <form action='' method='post'>
          <ul>

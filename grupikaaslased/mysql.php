@@ -1,6 +1,7 @@
 <?php
 
 
+
 $server = "localhost";
 $user = "root";
 $pass = "";
@@ -13,6 +14,7 @@ $conn = new mysqli($server,$user,$pass);
 function my_query($conn){
 
 $sql = "SELECT ID, Eesnimi, Perenimi, Synniaasta, Pilt, Sisestamise_aeg FROM grupp16.kaaslased";
+
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0){
@@ -21,8 +23,9 @@ if ($result->num_rows > 0){
               " Nimi:  ".$row["Eesnimi"].
               " Perenimi: ".$row["Perenimi"].
               " Sünniaasta: ".$row["Synniaasta"].
-              " Pilt: ".$row["Pilt"].
-              " Sisestamise aeg: ".$row["Sisestamise_aeg"]."<br>";
+
+              " Sisestamise aeg: ".$row["Sisestamise_aeg"]."<br>".
+              " Pilt: <img src='data:image/jpeg;base64,".base64_encode($row["Pilt"])."' />";
     }
     
 } else {echo "Andmebaas on tühi";}
@@ -43,16 +46,18 @@ function search_by($conn){
               " Nimi:  ".$row["Eesnimi"].
               " Perenimi: ".$row["Perenimi"].
               " Sünniaasta: ".$row["Synniaasta"].
-              " Pilt: ".$row["Pilt"].
-              " Sisestamise aeg: ".$row["Sisestamise_aeg"]."<br>";
+              
+              " Sisestamise aeg: ".$row["Sisestamise_aeg"]."<br>".
+              " Pilt: <img src='data:image/jpeg;base64,".base64_encode($row['Pilt'])."' />";
     }} else {echo "Sellist kirjet ei ole!";}
 }
 
 //lisamine
 function my_insert($conn){
-    
-    $sql = "INSERT INTO grupp16.kaaslased (Eesnimi, Synniaasta) VALUES('".
+
+    $sql = "INSERT INTO grupp16.kaaslased (Eesnimi, Perenimi, Synniaasta) VALUES('".
         $_POST['Eesnimi']."','".
+                $_POST['Perenimi']."','".
         $_POST['Sünniaasta']."')";
 
         $result = $conn->query($sql);
@@ -80,7 +85,9 @@ function show_button($conn){
 }
 
 // otsing parameetri järgi
+
 function search_by_button($conn){
+
     echo "<input type='submit' name='search' value='Otsi parameetri järgi'>";
     if(isset($_GET['search'])){
         if ($_GET['ID']==null OR $_GET['PARAM']==null){

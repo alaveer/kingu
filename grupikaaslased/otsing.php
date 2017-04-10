@@ -19,15 +19,15 @@ home();
 
     </ul>
         </form>
-    <form action='' method='get'>
+    <form action='' method='post'>
         <ul>
             <?php search_by_button($conn); ?><br><br>
-            <label for="PARAM">Veerg</label>
+            <label for="PARAM">Parameeter</label>
             <input type="text" name="PARAM" required>
            
             
-            <label for="ID">Väärtus</label>
-            <input type="text" name="ID" required>
+            <label for="NIMETUS">Väärtus</label>
+            <input type="text" name="NIMETUS" required>
             
       
         </ul>

@@ -34,10 +34,10 @@ home();
   <?php delete_button($conn); ?>      
 
 
-        <label for="PARAM">Veerg</label>
+        <label for="PARAM">Parameeter</label>
         <input type="text" name="PARAM" required>
-        <label for="ID">Sisesta väärtus</label>
-        <input type="text" name="ID" required>
+        <label for="NIMETUS">Väärtus</label>
+        <input type="text" name="NIMETUS" required>
      
 
         

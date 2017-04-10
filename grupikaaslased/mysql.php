@@ -35,9 +35,9 @@ if ($result->num_rows > 0){
 // otsing parameetri järgi
 function search_by($conn){
     $sql = "SELECT * FROM grupp16.kaaslased WHERE ".
-        $_GET['PARAM'].
-        "='".$_GET['ID']."'";
-    
+        $_POST['PARAM'].
+        "='".$_POST['NIMETUS']."'";
+
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0){
@@ -70,8 +70,10 @@ function my_delete($conn){
 
     $sql = "DELETE FROM grupp16.kaaslased WHERE ".
         $_POST['PARAM'].
-        "='".$_POST['ID']."'";
-    $result = $conn->query($sql);
+        "='".$_POST['NIMETUS']."'";
+            echo $sql;
+    
+// $result = $conn->query($sql);
 }
 
 
@@ -89,8 +91,8 @@ function show_button($conn){
 function search_by_button($conn){
 
     echo "<input type='submit' name='search' value='Otsi mingi parameetri järgi'>";
-    if(isset($_GET['search'])){
-        if ($_GET['ID']==null OR $_GET['PARAM']==null){
+    if(isset($_POST['search'])){
+        if ($_POST['NIMETUS']==null OR $_POST['PARAM']==null){
             echo "Sisesta midagigi!";
         } else {search_by($conn);}
     }

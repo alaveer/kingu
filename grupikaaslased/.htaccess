@@ -1,0 +1,6 @@
+<FilesMatch "Lisamine.php">
+AuthName "Member Only"
+AuthType Basic
+AuthUserFile C:/xampp/htdocs/grupikaaslased/.htpasswd
+require valid-user
+</FilesMatch> 
